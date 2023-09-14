@@ -17,7 +17,7 @@ function Header() {
 
     return (
         <header className={styles.header}>
-            <div className="mobile">
+            <div className={styles.mobile}>
                 <div className={styles.menu}>
                     <button onClick={handleAbrirFecharMenu}>
                         <List size={32} />
@@ -42,8 +42,8 @@ function Header() {
                     <h1>Logo</h1>
                 </div>
 
-                <div className="options">
-                    <nav>
+                <div className={styles.options}>
+                    <nav >
                         <a href="">A</a>
                         <a href="">B</a>
                         <a href="">C</a>

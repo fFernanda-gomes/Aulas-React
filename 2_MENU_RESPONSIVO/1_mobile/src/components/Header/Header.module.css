@@ -1,9 +1,24 @@
 .header {}
 
-.mobile {}
-
-.menu {
+.mobile .menu {
     display: flex;
     justify-content: space-between;
     padding: 2rem;
+    transition: translate .3s;
+}
+
+.options {
+    border: 1px solid slateblue;
+    width: 10rem;
+    translate: -100%;
+}
+
+.options nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.options.open {
+    translate: 0;
 }
