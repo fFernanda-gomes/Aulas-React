@@ -1,16 +1,54 @@
 import { useState } from "react"
-import { List } from '@phosphor-icons/react'
+import { List, X } from '@phosphor-icons/react'
 
-import "./Header.css"
+import styles from "./Header.module.css"
 
 function Header() {
-    return (
-        <header>
-            <div className="mobile">
-                <div className="menu">
-                    <button><List size={32} /></button>
+    const [abrirFechar, setAbrirFechar] = useState(false)
 
+  function handleAbrirFecharMenu() {
+    if (abrirFechar) {
+      setAbrirFechar(false)
+      return
+    }
+
+    setAbrirFechar(true)
+  }
+
+    return (
+        <header className={styles.header}>
+            <div className="mobile">
+                <div className={styles.menu}>
+                    <button onClick={handleAbrirFecharMenu}>
+                        <List size={32} />
+                    </button>
+                    {abrirFechar === true ? (
+                        <X
+                            size={32}
+                            color="#fff"
+                            fontSize={42}
+                            weight="bold"
+                            className="list"
+                        />
+                        ) : (
+                        <List
+                            size={32}
+                            color="#fff"
+                            fontSize={42}
+                            weight="bold"
+                            className="list"
+                        />
+                    )}
                     <h1>Logo</h1>
+                </div>
+
+                <div className="options">
+                    <nav>
+                        <a href="">A</a>
+                        <a href="">B</a>
+                        <a href="">C</a>
+                        <a href="">D</a>
+                    </nav>
                 </div>
             </div>
         </header>
