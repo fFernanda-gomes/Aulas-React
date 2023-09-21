@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@phosphor-icons/react": "^2.0.10"
+    "@phosphor-icons/react": "^2.0.10",
+    "keen-slider": "^6.8.6"
   }
 }

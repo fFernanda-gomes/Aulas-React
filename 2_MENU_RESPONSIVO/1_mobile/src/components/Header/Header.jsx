@@ -4,15 +4,15 @@ import { List, X } from '@phosphor-icons/react'
 import styles from "./Header.module.css"
 
 function Header() {
-    const [abrirFechar, setAbrirFechar] = useState(false)
+    const [abrirMenu, setAbrirMenu] = useState(false)
 
   function handleAbrirFecharMenu() {
-    if (abrirFechar) {
-      setAbrirFechar(false)
+    if (abrirMenu === true) {
+      setAbrirMenu(false)
       return
     }
 
-    setAbrirFechar(true)
+    setAbrirMenu(true)
   }
 
     return (
@@ -22,28 +22,11 @@ function Header() {
                     <button onClick={handleAbrirFecharMenu}>
                         <List size={32} />
                     </button>
-                    {abrirFechar === true ? (
-                        <X
-                            size={32}
-                            color="#fff"
-                            fontSize={42}
-                            weight="bold"
-                            className="list"
-                        />
-                        ) : (
-                        <List
-                            size={32}
-                            color="#fff"
-                            fontSize={42}
-                            weight="bold"
-                            className="list"
-                        />
-                    )}
                     <h1>Logo</h1>
                 </div>
 
-                <div className={styles.options}>
-                    <nav >
+                <div className={`${styles.options} ${abrirMenu === true && styles.open}`}>
+                    <nav>
                         <a href="">A</a>
                         <a href="">B</a>
                         <a href="">C</a>
