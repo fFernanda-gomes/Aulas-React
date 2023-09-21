@@ -20,8 +20,15 @@ function Header() {
             <div className={styles.mobile}>
                 <div className={styles.menu}>
                     <button onClick={handleAbrirFecharMenu}>
-                        <List size={32} />
+                        {
+                          abrirMenu === true ? (
+                            <X size={32} /> 
+                          ) : (
+                            <List size={32} /> 
+                          ) 
+                        }
                     </button>
+
                     <h1>Logo</h1>
                 </div>
 

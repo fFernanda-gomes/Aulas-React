@@ -12,6 +12,8 @@
     border: 1px solid slateblue;
     width: 10rem;
     translate: -100%;
+
+    transition: translate .3s;
 }
 
 .options nav {
